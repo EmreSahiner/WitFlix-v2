@@ -1,8 +1,17 @@
-# React + Vite
+# WitFlix Proje Adımları
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Step 1: initial setup
 
-Currently, two official plugins are available:
+1. Tasarımm dosyasını oluşturduk
+2. component planlamasını yaptık
+3. vite ile sıfırdan proje oluşturduk. `npm create vite@latest`
+4. versiyon kontrolü başlattık. `git init`
+5. ilk dosyaları `VS Code Source Control` üzerinden github'a aktardık. `Commit`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Step 2: Router
+
+6. page Componentleri oluşturmak için router yükledik. `npm i react-router-dom@5`
+7. uygulamayı `BrowserRouter` ile sarmaladık.
+8. page componentleri oluşturacağız.
+9. App.jsx'de route'ları tanımlayacağız.
+10. router test ve commit.
