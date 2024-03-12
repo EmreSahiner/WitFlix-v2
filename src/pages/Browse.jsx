@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Main from "../Main";
-import Suggestion from "../Suggestion";
-import TopList from "../TopList";
+import Main from "../components/Main";
+import Suggestion from "../components/Suggestion/Suggestion";
+import TopList from "../components/TopList/TopList";
 
 const Spacer = styled.div`
   height: 120px;

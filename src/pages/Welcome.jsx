@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import User from "../User";
+import User from "../components/User";
 
 const UserList = styled.div`
   display: flex;

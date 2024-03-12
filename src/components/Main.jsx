@@ -2,7 +2,7 @@ import styled from "styled-components";
 import video from "../assets/movies/queen_of_tears.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
-import Header from "./Header";
+import Header from "./Header/Header";
 
 const Player = styled.video`
   position: absolute;

@@ -1,8 +1,8 @@
 import { Route, Switch } from "react-router-dom";
 //import "./App.css";
-import Signup from "./components/pages/Signup";
-import Welcome from "./components/pages/Welcome";
-import Browse from "./components/pages/Browse";
+import Signup from "./pages/Signup";
+import Welcome from "./pages/Welcome";
+import Browse from "./pages/Browse";
 import { useState } from "react";
 
 function App() {
