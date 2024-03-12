@@ -6,7 +6,7 @@ import Browse from "./pages/Browse";
 import { useState } from "react";
 
 function App() {
-  const [users, setUsers] = useState([
+  const [users] = useState([
     { name: "Emre", avatar: "https://picsum.photos/300?1" },
     { name: "Hilal", avatar: "https://picsum.photos/300?2" },
     { name: "Seçil", avatar: "https://picsum.photos/300?3" },

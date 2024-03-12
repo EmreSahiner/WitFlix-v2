@@ -40,7 +40,7 @@ export default function Suggestion(props) {
           setMovies(response.data.movies);
         }
       });
-  }, [title]);
+  }, [title, param, type]);
   return (
     <Section>
       <h2>{title}</h2>
