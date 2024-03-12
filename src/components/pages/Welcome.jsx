@@ -18,11 +18,16 @@ const Button = styled.button`
   margin-top: 3rem;
 `;
 
+const Container = styled.section`
+  width: 100vw;
+  text-align: center;
+`;
+
 export default function Welcome(props) {
   const { users } = props;
 
   return (
-    <div className="user-section">
+    <Container>
       <h1>Who's watching?</h1>
       <UserList>
         {users.map((user, index) => {
@@ -30,6 +35,6 @@ export default function Welcome(props) {
         })}
       </UserList>
       <Button>Manage Profiles</Button>
-    </div>
+    </Container>
   );
 }

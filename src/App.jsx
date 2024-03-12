@@ -1,5 +1,5 @@
-import { Link, Route, Switch } from "react-router-dom";
-import "./App.css";
+import { Route, Switch } from "react-router-dom";
+//import "./App.css";
 import Signup from "./components/pages/Signup";
 import Welcome from "./components/pages/Welcome";
 import Browse from "./components/pages/Browse";
@@ -14,13 +14,6 @@ function App() {
 
   return (
     <>
-      <header>
-        <nav>
-          <Link to="/signup">Signup</Link>
-          <Link to="/browse">Browse</Link>
-          <Link to="/welcome">Welcome</Link>
-        </nav>
-      </header>
       <Switch>
         <Route exact path="/">
           <h1>main</h1>
