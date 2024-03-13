@@ -1,3 +1,5 @@
-export default function Signup() {
-  return <h1>SignUp</h1>;
+import Register from "../components/Register/Register";
+
+export default function Signup({ addUser }) {
+  return <Register addUser={addUser} />;
 }

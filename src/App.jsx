@@ -6,11 +6,15 @@ import Browse from "./pages/Browse";
 import { useState } from "react";
 
 function App() {
-  const [users] = useState([
+  const [users, setUsers] = useState([
     { name: "Emre", avatar: "https://picsum.photos/300?1" },
     { name: "Hilal", avatar: "https://picsum.photos/300?2" },
     { name: "Seçil", avatar: "https://picsum.photos/300?3" },
   ]);
+
+  const addUser = (user) => {
+    setUsers([user, ...users]);
+  };
 
   return (
     <>
@@ -19,7 +23,7 @@ function App() {
           <h1>main</h1>
         </Route>
         <Route path="/signup">
-          <Signup />
+          <Signup addUser={addUser} />
         </Route>
         <Route path="/welcome">
           <Welcome users={users} />
