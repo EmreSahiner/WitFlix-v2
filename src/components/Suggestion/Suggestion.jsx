@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Movie from "./Movie";
 import styled from "styled-components";
 import axios from "axios";
+import { initialState, movieReducer } from "../../store/reducers/movieReducer";
+import { addMyList } from "../../store/actions/movieActions";
 
 const Section = styled.section`
   padding: 1rem 2rem;
@@ -18,8 +20,14 @@ const MovieContainer = styled.div`
 `;
 
 export default function Suggestion(props) {
+  const [state, dispatch] = useReducer(movieReducer, initialState);
+
   const [movies, setMovies] = useState([]);
   const { title, showProgress, type, param } = props;
+
+  const handleAddToMyList = (movie) => {
+    dispatch(addMyList(movie));
+  };
 
   useEffect(() => {
     axios
@@ -46,7 +54,14 @@ export default function Suggestion(props) {
       <h2>{title}</h2>
       <MovieContainer>
         {movies.slice(0, 7).map((item, index) => {
-          return <Movie key={index} movie={item} showProgress={showProgress} />;
+          return (
+            <Movie
+              key={index}
+              movie={item}
+              showProgress={showProgress}
+              onClick={handleAddToMyList}
+            />
+          );
         })}
       </MovieContainer>
     </Section>

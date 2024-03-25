@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Main from "../components/Main";
 import Suggestion from "../components/Suggestion/Suggestion";
 import TopList from "../components/TopList/TopList";
+import { useReducer } from "react";
+import { initialState, movieReducer } from "../store/reducers/movieReducer";
 
 const Spacer = styled.div`
   height: 120px;
@@ -9,14 +11,28 @@ const Spacer = styled.div`
 `;
 
 export default function Browse() {
+  const [state, dispatch] = useReducer(movieReducer, initialState);
+
   return (
     <>
       <Main />
-      <Suggestion title="My List" showProgress={false} type="shows" />
+      <Suggestion
+        title="My List"
+        showProgress={false}
+        type="shows"
+        movies={state.myList}
+      />
       <Suggestion
         title="Continue Watching for Emre"
         showProgress={true}
         type="movies"
+        movies={state.incompleted}
+      />
+      <Suggestion
+        title="Continue Watching for Emre"
+        showProgress={false}
+        type="movies"
+        movies={state.completed}
       />
       <Suggestion
         title="Time Travel Movies"
