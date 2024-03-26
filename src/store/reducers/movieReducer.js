@@ -27,7 +27,7 @@ export const movieReducer = (state = initialState, action) => {
     case ADD_COMPLETED: //yarıda kalmışlardan çıkar
       return {
         ...state,
-        completed: [...state.completed, action.payload],
+        completed: [action.payload, ...state.completed],
         incompleted: state.incompleted.filter(
           (item) => item.id !== action.payload.id
         ),
