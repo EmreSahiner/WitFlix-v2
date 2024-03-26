@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addIncompleted } from "../../store/actions/movieActions";
 
 const Bar = styled.progress`
   color: red;
@@ -29,8 +31,14 @@ const Poster = styled.img`
 
 export default function Movie(props) {
   const { showProgress, movie } = props;
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(addIncompleted(movie));
+  };
+
   return (
-    <Card>
+    <Card onClick={handleClick}>
       <Poster src={movie.poster_path} />
       {showProgress && (
         <Bar id="file" value={Math.ceil(Math.random() * 100)} max="100" />

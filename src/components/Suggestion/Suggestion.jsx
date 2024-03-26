@@ -4,6 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { initialState, movieReducer } from "../../store/reducers/movieReducer";
 import { addMyList } from "../../store/actions/movieActions";
+import { useSelector } from "react-redux";
 
 const Section = styled.section`
   padding: 1rem 2rem;
@@ -24,6 +25,7 @@ export default function Suggestion(props) {
 
   const [movies, setMovies] = useState([]);
   const { title, showProgress, type, param } = props;
+  const incompletedMovies = useSelector((store) => store.movie.incompleted);
 
   const handleAddToMyList = (movie) => {
     dispatch(addMyList(movie));

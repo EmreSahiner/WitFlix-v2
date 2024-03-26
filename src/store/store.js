@@ -1,4 +1,4 @@
 import { legacy_createStore as createStore } from "redux";
-import { movieReducer } from "./reducers/movieReducer";
+import { reducers } from "./reducer";
 
-export const myStore = createStore(movieReducer);
+export const myStore = createStore(reducers);
